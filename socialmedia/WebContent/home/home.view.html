@@ -1,0 +1,14 @@
+<div ng-include="'menu.html'"></div>
+ <div class="container">
+	 <h1>Hi {{vm.user.firstName}}!</h1>
+	<p>You're logged in!!</p>
+	<h3>All registered users:</h3>
+	<!-- <a href="#/projects" class="projects" >Projects</a> -->
+	<ul>
+		<li ng-repeat="user in vm.allUsers">{{user.username}}
+			({{user.firstName}} {{user.lastName}}) - <a href="#"
+			ng-click="vm.deleteUser(user.id)">Delete</a>
+		</li>
+	</ul>
+</div>
+<p>&nbsp;</p>

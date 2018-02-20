@@ -1,0 +1,30 @@
+<div ng-include="'menu.html'"></div>
+<div class="container"></div>
+<!-- <a href="#/" class="btn btn-success" >home</a> -->
+<div class="panel panel-default">
+         <div class="panel-heading"><span class="lead">Test Form </span></div>
+              <div class="jumbotron">
+                  <form ng-submit="vm.submit()" name="myForm" class="form-horizontal">
+                      <input type="hidden" ng-model="vm.obj.id" />
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Name</label>
+                              <div class="col-md-7">
+                                    <input type="text" ng-model="vm.obj.date" placeholder="MM/DD/YYYY" />
+									<input type="text" ng-model="vm.obj.hours"  placeholder="HH:MM"/>
+									<select ng-model="vm.obj.session" placeholder="AM">
+									    <option value="AM">AM</option>
+									    <option value="PM">PM</option>
+									</select>
+                              </div>
+                          </div>
+                      </div>
+                       <div class="row">
+                          <div class="form-actions floatRight">
+                              <input type="submit" ng-click="vm.submit()" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                             <button type="button" ng-click="vm.cancle()" class="btn btn-primary btn-sm" >Cancle</button>
+                          </div>
+                      </div>
+                 </form>    
+	</div>
+</div>

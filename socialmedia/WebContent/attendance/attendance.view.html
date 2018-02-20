@@ -1,0 +1,97 @@
+<div ng-include="'menu.html'"></div>
+<div class="container">
+<!-- <a href="#/" class="btn btn-success" >home</a> -->
+<div class="panel panel-default" ng-show="showLogin">
+              <div class="panel-heading"><span class="lead">Attendance Form </span></div>
+              <div class="jumbotron">
+                  <form ng-submit="vm.submit()" name="myForm" class="form-horizontal">
+                      <input type="hidden" ng-model="vm.obj.id" />
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Name</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="vm.obj.name" name="name" class="username form-control input-sm" placeholder="Enter your name" required ng-minlength="3"/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.name.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.name.$error.minlength">Minimum length required is 3</span>
+                                      <span ng-show="myForm.name.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Phone</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="vm.obj.phone" name="phone" class="form-control input-sm" placeholder="Enter your Phone."/>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Email</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="vm.obj.mail" name="mail" class="email form-control input-sm" placeholder="Enter your Email" required/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.mail.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.mail.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+					<div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Qualification</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="vm.obj.qlf" name="qlf" class="email form-control input-sm" placeholder="Enter your Email" required/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.qlf.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.qlf.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-actions floatRight">
+                              <input type="submit" value="{{!vm.obj.c_id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                              <button type="button" ng-click="vm.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+                              <button type="button" ng-click="vm.cancle()" class="btn btn-primary btn-sm" >Cancle</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+		  <select ng-model="cls" ng-change="vm.update(this)">
+		  	<option ng-repeat="x in vm.classes" value="{{x.id}}">{{x.c_name}}</option>
+		  </select>
+  <div class="panel panel-default">
+		<table class="table table-striped table-condensed table-hover">
+	    		<thead>
+		      		<tr>
+				        <th>Id</th>
+				        <th>User Name</th>
+				        <th>Phone</th>
+				        <th>Mail</th>
+				        <th>Is Present</th>
+				        <th>Action</th>
+					</tr>
+		    	</thead>
+	    		<tbody>
+					<tr ng-repeat="obj in vm.allobj">
+						<td>{{$index+1}}</td>
+						<td>{{obj.name}}</td>
+						<td>{{obj.phone}}</td>
+						<td>{{obj.mail}}</td>
+						<td><input type="checkbox" ng-model="isPr" ng-checked="{{obj.ip}}"
+                       ng-change="vm.stateChanged(this)"/></td>
+						<td><a href="#/attendance" class="btn btn-success" ng-click="vm.loadObj(obj.id)">View</a>
+						<!-- <a href="#/attendance" class="btn btn-danger" ng-click="vm.updateObj(obj.id)">Delete</a> -->
+						</td>
+					</tr>
+	    		</tbody>
+	    		</table>
+	</div>
+</div>

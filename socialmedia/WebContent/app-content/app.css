@@ -1,0 +1,61 @@
+/* nav {
+    display: inline-block;
+    margin: 60px auto 45px;
+    background-color: #5597b4;
+    box-shadow: 0 1px 1px #ccc;
+    border-radius: 2px;
+}
+nav a {
+    display: inline-block;
+    padding: 18px 75px;
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none !important;
+    line-height: 1;
+    text-transform: uppercase;
+    background-color: transparent;
+    -webkit-transition: background-color 0.25s;
+    -moz-transition: background-color 0.25s;
+    transition: background-color 0.25s;
+}
+a, a:visited {
+    outline: none;
+    color: #389dc1;
+} */
+.jumbotron
+{
+    margin-top: 60px;
+    background-color: rgba(235, 229, 229, 0.22);
+}
+.navbar-collapse, .navbar-collapse{
+	background-color:rgba(73, 218, 223, 0.98);
+}
+li{
+	padding-left: 28px;
+	background-color:rgba(73, 218, 223, 0.98);
+	color:fuchsia;
+	font-size: 20px;
+}
+li:hover{
+	background-color:rgba(133, 56, 56, 0.22);
+	font-size: 20px;
+	color:#FFF;
+}
+.navbar-fixed-top {
+    border-color: red !important;
+}
+select{
+	width: 241px;
+    height: 28px;
+    border-color: rgba(255, 0, 0, 0.22);
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+.form-controle{
+	width: 79% !important;
+    height: 48px !important;
+}
+label{
+	font-size: 21px;
+}

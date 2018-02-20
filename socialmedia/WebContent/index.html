@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Sample</title>
+    <link rel="stylesheet" href="app-content/bootstrap.css" />
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <!--   <link href="app-content/app.css" rel="stylesheet" /> -->
+    <link href="app-content/style.css" rel="stylesheet" />
+</head>
+<body>
+   
+     <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+     <div ng-view></div>
+     <div ng-include="'footer.html'"></div>
+
+    <script src="app-content/jquery-2.2.0.min.js"></script>
+    <script src="app-content/angular.js"></script>
+    <script src="app-content/bootstrap.js"></script>
+    <script src="app-content/angular-route.js"></script>
+    <script src="app-content/angular-cookies.js"></script>
+
+    <script src="app.js"></script>
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+    <script src="app-services/projects.service.js"></script>
+    <script src="app-services/attendance.service.js"></script>
+    <script src="app-services/test.service.js"></script>
+    <script src="app-services/course.service.js"></script>
+
+    <!-- Real user service that uses an api -->
+    <!-- <script src="app-services/user.service.js"></script> -->
+
+    <!-- Fake user service for demo that uses local storage -->
+    <script src="app-services/user.service.local-storage.js"></script>
+
+    <script src="home/home.controller.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="register/register.controller.js"></script>
+    <script src="projects/projects.controller.js"></script>
+    <script src="attendance/attendance.controller.js"></script>
+    <script src="test/test.controller.js"></script>
+     <script src="systedateoverride/systedateoverride.controller.js"></script>
+    <script src="course/course.controller.js"></script>
+</body>
+</html>
