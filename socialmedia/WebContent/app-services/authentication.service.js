@@ -52,7 +52,7 @@
                     authdata: authdata
                 }
             };
-
+            $rootScope.date="02/20/2018";
            /* $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;*/ // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
         }

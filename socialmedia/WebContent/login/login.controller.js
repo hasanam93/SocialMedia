@@ -5,8 +5,8 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', '$rootScope','AuthenticationService', 'FlashService'];
-    function LoginController($location, $rootScope, AuthenticationService, FlashService) {
+    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
+    function LoginController($location, AuthenticationService, FlashService) {
         var vm = this;
 
         vm.login = login;
@@ -21,7 +21,6 @@
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
-                    console.log($rootScope);
                     $location.path('/');
                 } else {
                     FlashService.Error(response.message);

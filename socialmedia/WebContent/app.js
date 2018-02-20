@@ -40,9 +40,9 @@
                 templateUrl: 'test/test.view.html',
                 controllerAs: 'vm'
             })
-             .when('/systedateoverride', {
-                controller: 'SystedateOverrideController',
-                templateUrl: 'systedateoverride/systedateoverride.view.html',
+            .when('/systemdateoverride', {
+                controller: 'SystemDateOverrideController',
+                templateUrl: 'systemdateoverride/systemoverride.view.html',
                 controllerAs: 'vm'
             })
             .when('/courses', {

@@ -10,12 +10,14 @@
         var vm = this;
 
         vm.user = null;
+        vm.date=null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
         initController();
 
         function initController() {
+        	vm.date=$rootScope.date;
             loadCurrentUser();
             loadAllUsers();
         }
